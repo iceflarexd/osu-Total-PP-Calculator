@@ -16,8 +16,7 @@ namespace TotalPpCalc
         private OsuUserBest[] userScores;
         private OsuUser[] player;
         private List<float> userTopPps;
-        private float totalWithBonus, bonusPp;
-        float totalPp;
+        private float totalWithBonus, bonusPp, totalPp;
 
         public MainWindow()
         {
