@@ -12,11 +12,11 @@ namespace TotalPpCalc
     /// </summary>
     public partial class MainWindow : Window
     {
-        public OsuClient osu = new OsuClient(Api.apikey);
-        public OsuUserBest[] userScores;
-        public OsuUser[] player;
-        public List<float> userTopPps;
-        public float totalWithBonus, bonusPp;
+        private OsuClient osu = new OsuClient(Api.apikey);
+        private OsuUserBest[] userScores;
+        private OsuUser[] player;
+        private List<float> userTopPps;
+        private float totalWithBonus, bonusPp;
         float totalPp;
 
         public MainWindow()
