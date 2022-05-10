@@ -1,0 +1,204 @@
+﻿<Window x:Class="TotalPpCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TotalPpCalc"
+        mc:Ignorable="d"
+        Title="Total PP Calculator" Height="320" Width="450"
+        WindowStyle="None" ResizeMode="NoResize"
+        Icon="Images\osuLogo.ico">
+    <Grid Background="#402436" Height="600" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="53*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#1f0716" MouseDown="Grid_MouseDown" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition/>
+                <ColumnDefinition  Width="32"/>
+                <ColumnDefinition  Width="32"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" Text="Total PP Calculator" Margin="2,0,0,0"
+                       Foreground="White" FontFamily="{StaticResource Dosis}"
+                       VerticalAlignment="Center" FontSize="16"/>
+            <Image Width="20" Height="20" RenderOptions.BitmapScalingMode="Fant"
+                   Source="Images/osuLogo.png" HorizontalAlignment="Center"/>
+
+            <Button Grid.Column="2" Content="__" Foreground="White" Click="MinWindow">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#1f0716"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#591e43"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="24"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Grid.Column="3" Content="X" Foreground="White" Click="CloseWindow"
+                    Margin="0,0,2,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#cf3c59"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#8c2338"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="24"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <TextBox Name="userIdText" Grid.Row="1" Width="100" Margin="121,10,70,533"
+                 Background="#1f0716" BorderBrush="Transparent" Foreground="White"
+                 FontFamily="{StaticResource Dosis}" FontSize="16"/>
+        <TextBlock Grid.Row="1" Foreground="White" FontFamily="{StaticResource Dosis}"
+                   Text="Username/ ID:" FontSize="19" Margin="10,10,175,538" Height="20"/>
+        <Button Grid.Row="1" Content="Go!" Width="40" Height="25" Margin="228,10,23,533"
+                Foreground="#1f0716" BorderBrush="Transparent" Click="OnGoClick">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#e084bd"/>
+                    <Setter Property="FontFamily" Value="{StaticResource Dosis}"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#ffb0e1"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="40" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Grid.Row="1" Content="Recalculate" Width="150" Height="50" Margin="150,218,150,300"
+                Foreground="#1f0716" BorderBrush="Transparent" Click="OnRecalcClick" 
+                Grid.ColumnSpan="2" FontSize="23">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#e084bd"/>
+                    <Setter Property="FontFamily" Value="{StaticResource Dosis}"/>
+                    <Setter Property="FontWeight" Value="Medium"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#ffb0e1"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="50"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock Name="usernameText" Grid.Row="1" Text="no user loaded" Width="160" Height="30" 
+                   Grid.ColumnSpan="2" Margin="280,5,10,533"
+                   Foreground="White" FontFamily="{StaticResource Dosis}"
+                   TextAlignment="Center" FontSize="24"/>
+
+        <TextBlock Name="totalPpText" Grid.Row="1" Text="" Height="30" Margin="225,68,80,470"
+                   Foreground="White" FontFamily="{StaticResource Dosis}"
+                   TextAlignment="Left" FontSize="24" Background="#1f0716" Grid.ColumnSpan="2"/>
+
+        <TextBlock Name="totalPpLabel" Grid.Row="1" Text="Total PP (Raw):" Height="30" Margin="80,68,70,470"
+                   Foreground="White" FontFamily="{StaticResource Dosis}"
+                   TextAlignment="Center" FontSize="24"/>
+
+
+        <TextBox x:Name="newPpText" Grid.Row="1" Margin="204,155,158,383"
+            Background="#1f0716" BorderBrush="Transparent" Foreground="White"
+            FontFamily="{StaticResource Dosis}" FontSize="24" Height="30" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="1" Foreground="White" FontFamily="{StaticResource Dosis}"
+            Text="Score PP:" FontSize="24" Margin="108,153,77,385" Height="30"/>
+
+        <Button Grid.Row="1" Content="Add" Width="40" Height="25" Margin="7,158,112,385"
+            Foreground="#1f0716" BorderBrush="Transparent" Click="OnAddScoreClick" Grid.Column="1">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#e084bd"/>
+                    <Setter Property="FontFamily" Value="{StaticResource Dosis}"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#ffb0e1"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="40" Height="25"
+                        CornerRadius="4"
+                        Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center" 
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="bonusPpText" Grid.Row="1" Text="" Height="30" Margin="280,111,25,427"
+            Foreground="White" FontFamily="{StaticResource Dosis}"
+            TextAlignment="Left" FontSize="24" Background="#1f0716" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="totalPpLabelBonus" Grid.Row="1" Text="Total PP (With Bonus PP):" Height="30" Margin="41,111,16,427"
+            Foreground="White" FontFamily="{StaticResource Dosis}"
+            TextAlignment="Center" FontSize="24"/>
+    </Grid>
+</Window>
