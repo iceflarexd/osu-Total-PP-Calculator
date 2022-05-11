@@ -3,7 +3,7 @@ WORK IN PROGRESS! If you experience any bugs or unintentional behavior, please [
 
 ![](https://i.imgur.com/yEJkTD9.png)
 
-Enter new top plays and see how much weighted PP it would give you.
+Enter new top plays and see how much [weighted PP](https://osu.ppy.sh/wiki/en/Performance_points/Weighting_system) it would give you.
 
 (Example: If you wanted to see how many more 300pp plays you'd need to get 5000pp weighted PP)
 
