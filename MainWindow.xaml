@@ -89,7 +89,7 @@
                  FontFamily="{StaticResource Dosis}" FontSize="16"/>
         <TextBlock Grid.Row="1" Foreground="White" FontFamily="{StaticResource Dosis}"
                    Text="Username/ ID:" FontSize="19" Margin="10,10,175,538" Height="20"/>
-        <Button Grid.Row="1" Content="Go!" Width="40" Height="25" Margin="228,10,23,533"
+        <Button Name="GoButton" Grid.Row="1" Content="Go!" Width="40" Height="25" Margin="228,10,23,533"
                 Foreground="#1f0716" BorderBrush="Transparent" Click="OnGoClick">
             <Button.Style>
                 <Style TargetType="Button">
