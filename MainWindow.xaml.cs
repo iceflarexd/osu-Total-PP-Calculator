@@ -8,9 +8,6 @@ using System.Windows.Input;
 
 namespace TotalPpCalc
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly OsuClient osu = new OsuClient(Settings.Default.apiToken);
