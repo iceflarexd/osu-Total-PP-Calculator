@@ -364,3 +364,6 @@ FodyWeavers.xsd
 /Api.cs
 /Settings.settings
 /Settings.Designer.cs
+/App.config
+/App.xaml
+/App.xaml.cs
