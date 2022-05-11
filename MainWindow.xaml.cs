@@ -38,7 +38,9 @@ namespace TotalPpCalc
             {
                 totalPpText.Text = "loading...";
                 bonusPpText.Text = "loading...";
+
                 userScores = await GetUserScores();
+
                 if (userScores != null)
                 {
                     userTopPps = new List<float>();
@@ -59,22 +61,18 @@ namespace TotalPpCalc
                     }
 
                     bonusPp = CalcBonusPp(totalPp);
-
-                    totalPpText.Text = totalPp.ToString();
-                    bonusPpText.Text = (totalPp + bonusPp).ToString();
+                    SetPpTxt();
                 }
             }
             catch (ArgumentOutOfRangeException)
             {
-                totalPpText.Text = "";
-                bonusPpText.Text = "";
+                ResetPpTxt();
                 usernameText.Text = "no user loaded";
                 MessageBox.Show("No user found.");
             }
             catch (Exception ex)
             {
-                totalPpText.Text = "";
-                bonusPpText.Text = "";
+                ResetPpTxt();
                 usernameText.Text = "no user loaded";
                 MessageBox.Show(ex.Message);
             }
@@ -82,9 +80,7 @@ namespace TotalPpCalc
 
         private void OnRecalcClick(object sender, RoutedEventArgs e)
         {
-            if (usernameText.Text == "no user loaded") MessageBox.Show("Please load a valid user's scores before recalculating.");
-            if (usernameText.Text == "loading scores...") MessageBox.Show("Please wait until all scores have finished loading.");
-            if (usernameText.Text != "no user loaded" && usernameText.Text != "loading scores...")
+            if (IsUserLoading())
             {
                 userTopPps.Sort();
                 userTopPps.Reverse();
@@ -94,17 +90,13 @@ namespace TotalPpCalc
                 {
                     totalPp += (float)(userTopPps[i] * Math.Pow(0.95, i));
                 }
-
-                totalPpText.Text = totalPp.ToString();
-                bonusPpText.Text = (totalPp + bonusPp).ToString();
+                SetPpTxt();
             }
         }
 
         private void OnAddScoreClick(object sender, RoutedEventArgs e)
         {
-            if (usernameText.Text == "no user loaded") MessageBox.Show("Please load a valid user's scores before adding any.");
-            if (usernameText.Text == "loading scores...") MessageBox.Show("Please wait until all scores have finished loading.");
-            if (usernameText.Text != "no user loaded" && usernameText.Text != "loading scores...")
+            if (IsUserLoading())
             {
                 try
                 {
@@ -133,10 +125,37 @@ namespace TotalPpCalc
                 usernameText.Text = "loading scores...";
                 return await Task.Run(() => osu.GetUserBest(userId, 0, 100));
             }
-            totalPpText.Text = "";
-            bonusPpText.Text = "";
+            ResetPpTxt();
+            usernameText.Text = "no user loaded";
             MessageBox.Show("Username field cannot be blank.");
             return null;
+        }
+
+        private bool IsUserLoading()
+        {
+            if (usernameText.Text == "no user loaded")
+            {
+                MessageBox.Show("Please load a valid user's scores before adding any.");
+                return false;
+            }
+            if (usernameText.Text == "loading scores...")
+            {
+                MessageBox.Show("Please wait until all scores have finished loading.");
+                return false;
+            }
+            return true;
+        }
+
+        private void ResetPpTxt()
+        {
+            totalPpText.Text = "";
+            bonusPpText.Text = "";
+        }
+
+        private void SetPpTxt()
+        {
+            totalPpText.Text = totalPp.ToString();
+            bonusPpText.Text = (totalPp + bonusPp).ToString();
         }
     }
 }
