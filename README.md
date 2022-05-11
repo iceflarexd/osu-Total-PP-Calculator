@@ -1,5 +1,5 @@
 # Functionality
-WORK IN PROGRESS! If you experience any bugs or unintentional behavior, please [make an issue](https://github.com/iceflarexd/osu-Total-PP-Calculator/issues/new/choose)
+WORK IN PROGRESS! If you experience any bugs or unintentional behavior, please [make an issue](https://github.com/iceflarexd/osu-Total-PP-Calculator/issues/new/choose).
 
 ![](https://i.imgur.com/yEJkTD9.png)
 
