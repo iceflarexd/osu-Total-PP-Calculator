@@ -36,6 +36,8 @@ namespace TotalPpCalc
         {
             try
             {
+                totalPpText.Text = "loading...";
+                bonusPpText.Text = "loading...";
                 userScores = await GetUserScores();
                 if (userScores != null)
                 {
