@@ -66,11 +66,15 @@ namespace TotalPpCalc
             }
             catch (ArgumentOutOfRangeException)
             {
+                totalPpText.Text = "";
+                bonusPpText.Text = "";
                 usernameText.Text = "no user loaded";
                 MessageBox.Show("No user found.");
             }
             catch (Exception ex)
             {
+                totalPpText.Text = "";
+                bonusPpText.Text = "";
                 usernameText.Text = "no user loaded";
                 MessageBox.Show(ex.Message);
             }
@@ -129,7 +133,8 @@ namespace TotalPpCalc
                 usernameText.Text = "loading scores...";
                 return await Task.Run(() => osu.GetUserBest(userId, 0, 100));
             }
-
+            totalPpText.Text = "";
+            bonusPpText.Text = "";
             MessageBox.Show("Username field cannot be blank.");
             return null;
         }
