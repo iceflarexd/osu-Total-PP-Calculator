@@ -12,4 +12,4 @@ PREREQUISITES: Requires [.NET Framework version 4.8](https://dotnet.microsoft.co
 
 1.) Download the [latest release](https://github.com/iceflarexd/osu-Total-PP-Calculator/releases/download/v0.1.1/Total.PP.Calculator.v0.1.1.zip) (v0.1.1)
 
-2.) Extract Total.PP.Calculator.vX.X.X.zip into a folder, then simply run "Total PP Calculator.exe" and you're good to go!
+2.) Extract Total.PP.Calculator.vX.X.X.zip into a folder, then simply run "TotalPpCalc.exe" and you're good to go!
