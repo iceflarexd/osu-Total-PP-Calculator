@@ -153,7 +153,8 @@
 
         <TextBlock Name="totalPpText" Grid.Row="1" Text="" Height="30" Margin="225,68,80,470"
                    Foreground="White" FontFamily="{StaticResource Dosis}"
-                   TextAlignment="Left" FontSize="24" Background="#1f0716" Grid.ColumnSpan="2"/>
+                   TextAlignment="Left" FontSize="24" Background="#1f0716" Grid.ColumnSpan="2"
+                   Padding="5,0,0,0"/>
 
         <TextBlock Name="totalPpLabel" Grid.Row="1" Text="Total PP (Raw):" Height="30" Margin="80,68,70,470"
                    Foreground="White" FontFamily="{StaticResource Dosis}"
@@ -200,7 +201,6 @@
                    Padding="5,0,0,0"/>
         <TextBlock x:Name="totalPpLabelBonus" Grid.Row="1" Text="Total PP (With Bonus PP):" Height="30" Margin="41,111,16,427"
             Foreground="White" FontFamily="{StaticResource Dosis}"
-            TextAlignment="Center" FontSize="24"
-                   Padding="5,0,0,0"/>
+            TextAlignment="Center" FontSize="24"/>
     </Grid>
 </Window>
