@@ -1,4 +1,4 @@
-# Total Weighted PP Calculator for osu!
+# Functionality
 ![](https://i.imgur.com/yEJkTD9.png)
 
 Enter new top plays and see how much weighted PP it would give you.
