@@ -8,8 +8,8 @@ Enter new top plays and see how much [weighted PP](https://osu.ppy.sh/wiki/en/Pe
 (Example: If you wanted to see how many more 300pp plays you'd need to get 5000pp weighted PP)
 
 # Installation
-PREREQUISITES: Requires [.NET Framework version 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer) or greater to run.
+PREREQUISITES: Requires [.NET Core 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-3.1.25-windows-x64-installer) or greater to run.
 
-1.) Download the [latest release](https://github.com/iceflarexd/osu-Total-PP-Calculator/releases/download/v0.1.2/Total.PP.Calculator.v0.1.2.zip) (v0.1.2)
+1.) Download the [latest release](https://github.com/iceflarexd/osu-Total-PP-Calculator/releases/download/v0.1.2/TotalPpCalc.exe) (v0.1.2)
 
-2.) Extract Total.PP.Calculator.vX.X.X.zip into a folder, then simply run "TotalPpCalc.exe" and you're good to go!
+2.) Simply run "TotalPpCalc.exe" and you're good to go!
